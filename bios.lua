@@ -21,7 +21,7 @@ local path = '/'
 local function log(msg)
  term.setTextColor(colors.white)
  write('[ ')
- term.setTextColor(colors.blue)
+ if term.isColor() then term.setTextColor(colors.blue) end
  write('info')
  term.setTextColor(colors.white)
  print(' ] '..msg)
