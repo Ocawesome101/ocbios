@@ -1,5 +1,13 @@
 -- Basically a BIOS --
 
+if not _G["~expect"] then
+ _G["~expect"] = function(val, var, typ)
+  if not type(var) == typ then
+   error(tostring(var) .. " is not valid as required " .. typ)
+  end
+ end
+end
+
 _G.bios = {}
 
 craftOS_version = os.version()
