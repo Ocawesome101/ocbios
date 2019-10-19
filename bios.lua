@@ -33,7 +33,7 @@ local function log(msg)
  write('info')
  term.setTextColor(colors.white)
  print(' ] '..msg)
- os.sleep(0.0001)
+ os.sleep(0.01)
 end
 
 local function boot(bootPath)
