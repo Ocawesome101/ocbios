@@ -1,7 +1,7 @@
 -- Basically a BIOS --
 
 if not _G["~expect"] then
- _G["~expect"] = function(val, var, typ)
+ _G["~expect"] = function(val, var, typ) -- Ridiculously, ridiculously jank.
   if not type(var) == typ then
    error(tostring(var) .. " is not valid as required " .. typ)
   end
@@ -45,7 +45,9 @@ local function boot(bootPath)
   os.sleep(4)
   os.shutdown()
  else
-  shell.run(p)
+  local ok, err = loadfile(p)
+  if not ok then error(err); return false end
+  ok()
  end
 end
 
