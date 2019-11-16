@@ -1,5 +1,7 @@
 -- Basically a BIOS --
 
+no_shell = false
+
 if not _G["~expect"] then
  _G["~expect"] = function(val, var, typ) -- Ridiculously, ridiculously jank.
   if not type(var) == typ then
@@ -45,9 +47,13 @@ local function boot(bootPath)
   os.sleep(4)
   os.shutdown()
  else
-  local ok, err = loadfile(p)
-  if not ok then error(err); return false end
-  ok()
+  if no_shell then
+   local ok, err = loadfile(p)
+   if not ok then error(err); return false end
+   ok()
+  else
+   shell.run(p)
+  end
  end
 end
 
