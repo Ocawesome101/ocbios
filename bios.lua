@@ -17,7 +17,7 @@ _G.bios["pullEvent"] = os.pullEvent
 os.pullEvent = os.pullEventRaw
 
 bios.version = function()
- return "OCBios version 0.02"
+ return "OC-BIOS 0.2.0"
 end
 
 -- os.version() should be redefined by your OS
