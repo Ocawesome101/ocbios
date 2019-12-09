@@ -1,4 +1,4 @@
--- Boot selection utility. Place boot scripts in /boot/<name>/ --
+-- Boot selection utility. More closely resembles UEFI than the original OC-BIOS. Place boot scripts in /boot/<name>/ --
 
 local bootDir = "/boot/"
 
@@ -22,7 +22,7 @@ function _G.error(reason)
 end
 
 function os.version()
-    return "OCBIOS v0.3.6"
+    return "OC-EFI v0.3.6"
 end
 
 local function log(msg)
